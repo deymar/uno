@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Débito{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="page-header"><h2>Debitar a una cuenta</h2></div>
+            {% if mensaje %}
+                <div class="alert alert-danger">
+                    {{ mensaje }}
+                </div>
+            {% endif %}
+
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="control-label" for="username">Código de cuenta</label>
+                    <input type="text" id="username" name="username" class="form-control" value="{{ username }}">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="monto">Monto a debitar</label>
+                    <input type="text" name="monto" id="monto" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="desc">Descripción de la transacción</label>
+                    <input type="text" name="desc" id="desc" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Debitar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

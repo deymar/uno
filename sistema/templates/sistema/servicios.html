@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Pago de Servicios{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="page-header"><h2>Pago de Servicios</h2></div>
+            {% if mensaje %}
+                <div class="alert alert-danger">
+                    {{ mensaje }}
+                </div>
+            {% endif %}
+
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="control-label" for="cuenta_servicio">Código de cuenta</label>
+                    <input type="text" id="cuenta_servicio" name="cuenta_servicio" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="tipo_servicio">Tipo de servicio</label>
+                    <input type="text" name="tipo_servicio" id="tipo_servicio" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="monto">Monto a debitar</label>
+                    <input type="text" name="monto" id="monto" class="form-control">
+                </div>
+
+                
+
+                <button type="submit" class="btn btn-primary">Pagar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
