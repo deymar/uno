@@ -24,3 +24,4 @@ class ServicioTest(TestCase):
         credit = Credito.objects.get(descripcion="prueba")
         self.assertNotEqual(credit.monto, '0.00')
         self.assertIsNotNone(credit.user_cuenta)
+
