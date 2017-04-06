@@ -20,6 +20,7 @@ class ServicioTest(TestCase):
         Credito.objects.create(monto='10.00', descripcion="prueba", user_cuenta=user_cuenta)
 
         
+        
     def test_credito(self):
         credit = Credito.objects.get(descripcion="prueba")
         self.assertNotEqual(credit.monto, '0.00')
