@@ -26,7 +26,7 @@ class ServicioTest(TestCase):
 
     def test_user(self):
         usuario = User.objects.get(username = "prueba")
-        self.assertEqual(usuario.password, "12344")
+        self.assertEqual(usuario.password, "1234")
 
     def test_servicio(self):
         pago = PagoServicio.objects.get(cuenta_servicio = "cuenta")
