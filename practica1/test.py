@@ -18,6 +18,11 @@ class ServicioTest(TestCase):
         user_cuenta = UserProfile.objects.get(correo = "hola@gmail.com")
         Debito.objects.create(monto='10.00', descripcion="prueba", user_cuenta=user_cuenta)
         Credito.objects.create(monto='10.00', descripcion="prueba", user_cuenta="user_cuenta")
+        
+   
+    def test_user(self):
+        user = User.objects.get(username = "prueba")
+        self.assertNotNull(user.username)
 
         
     def test_credito(self):
