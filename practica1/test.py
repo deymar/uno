@@ -23,7 +23,7 @@ class ServicioTest(TestCase):
         
     def test_credito(self):
         credit = Credito.objects.get(descripcion="prueba")
-        self.assertNotEqual(credit.monto, '10.00')
+        self.assertNotEqual(credit.monto, '123.00')
 
     def test_user(self):
         usuario = User.objects.get(username = "prueba")
